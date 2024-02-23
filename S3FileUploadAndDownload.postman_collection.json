@@ -1,0 +1,97 @@
+{
+	"info": {
+		"_postman_id": "2baa7ddb-df8d-45bd-97f4-c46a93158323",
+		"name": "S3FileUploadAndDownload",
+		"description": "```\nSpring boot project to demonstrate file upload and download in aws s3\n\n ```",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33155951"
+	},
+	"item": [
+		{
+			"name": "Upload_File_On_S3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/mohasif4/OneDrive - Publicis Groupe/Documents/Java interview questions and answers.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9090/file/upload",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"file",
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteFileFromS3",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:9090/file/delete/1708659458585_Java interview questions and answers.pdf?fileName",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"file",
+						"delete",
+						"1708659458585_Java interview questions and answers.pdf"
+					],
+					"query": [
+						{
+							"key": "fileName",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DownloadFileFromS3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:9090/file/download/1708659412487_courses status.txt",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"file",
+						"download",
+						"1708659412487_courses status.txt"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
